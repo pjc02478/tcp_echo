@@ -10,6 +10,8 @@ int x = 123;
 f(x); // T -> int, ParamType -> const int &
 ```
 
+* __T__는 __expr__과 __ParamType__을 기반으로 추론된다.
+
 1. ParamType이 참조이거나 포인터이고 전역(universal) 참조는 아닌 경우.
   * __expr__이 참조라면 참조 부분을 무시한다.
   * __ParamType__과 다른 __expr__의 타입을 패턴 매칭해 T를 결정한다.
