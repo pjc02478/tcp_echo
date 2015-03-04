@@ -67,7 +67,7 @@ func(rx); // T -> int, ParamType -> int
 * 참조형을 사용할 경우 배열의 참조형을 넘겨받을 수 있다.
 ```C++
 template <typename T, std::size_t N>
-sizte_t arraySize(T (&)[N])
+sizte_t arraySize(T (&)[N]) // 배열의 사이즈를 가져올 수 있다.
 ```
 함수
 ----
