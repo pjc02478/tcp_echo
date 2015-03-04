@@ -11,8 +11,8 @@ f(x); // T -> int, ParamType -> const int &
 ```
 
 1. ParamType이 참조이거나 포인터이고 전역(universal) 참조는 아닌 경우.
-* __expr__이 참조라면 참조 부분을 무시한다.
-* __ParamType__과 다른 __expr__의 타입을 패턴 매칭해 T를 결정한다.
+  * __expr__이 참조라면 참조 부분을 무시한다.
+  * __ParamType__과 다른 __expr__의 타입을 패턴 매칭해 T를 결정한다.
 ```C++
 template <typename T>
 void func(T &param);
@@ -27,8 +27,8 @@ func(rx); // T -> const int, ParamType -> const int &
 ```
 
 2. ParamType이 전역(universal) 참조인 경우.
-* __expr__이 lvalue라면 __T__와 __ParamType__은 lvalue로 추론된다.
-* __expr__이 rvalue라면 case1의 규칙이 적용된다.
+  * __expr__이 lvalue라면 __T__와 __ParamType__은 lvalue로 추론된다.
+  * __expr__이 rvalue라면 case1의 규칙이 적용된다.
 ```C++
 template <typename T>
 void func(T &&param);
@@ -44,8 +44,8 @@ func(27); // T -> int, ParamType -> int &&
 ```
 
 3. 둘 다 아닐 때
-* __expr__이 참조형이라면 참조를 무시한다.
-* __expr__이 const이거나 volatile이라면 무시한다.
+  * __expr__이 참조형이라면 참조를 무시한다.
+  * __expr__이 const이거나 volatile이라면 무시한다.
 ```C++
 template <typename T>
 void func(T param);
