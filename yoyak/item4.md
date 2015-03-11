@@ -25,4 +25,18 @@ TD<decltype(x)> a;
 ```C++
 typeid(int).name() // 'int'
 ```
+* const, reference, volatile 속성이 사라진 타입을 알려준다.
+```C++
+int &x = y;
+const int z = 12;
 
+typeid(x).name() // 'int'
+typeid(z).name() // 'int'
+```
+* Boost.TypeIndex를 사용하면 해결할 수 있다.
+```C++
+const int &x = y;
+
+boost::typeindex::type_id_with_cvr<x>.pretty_name()
+/// 'const int &'
+```
